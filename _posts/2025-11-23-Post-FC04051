@@ -7,7 +7,6 @@ title: نقاشی با پایتون
 [My painting](../assets/images/jungle.JPG "Team Picture")
 
 ``` python
-
 import turtle
 import random
 
@@ -115,5 +114,4 @@ for i in range(7):
 
 turtle.update()
 turtle.mainloop()
-
 ```
