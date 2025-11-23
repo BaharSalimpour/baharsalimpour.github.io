@@ -1,0 +1,117 @@
+---
+layout: posts
+title: نقاشی با پایتون
+---
+
+# My first computer art project
+[My painting](../assets/images/jungle.JPG "Team Picture")
+
+``` python
+import turtle
+import random
+
+colors=["chocolate4","DarkOrange4","DarkRed","brown4","black","bisque4","burlywood3","burlywood4","coral4","DarkGoldenrod","DarkGoldenrod4","DarkGrey","DarkKhaki"]
+zarib=[0.5,0.6,0.7,0.8,0.9]
+grass_color=["chartreuse","chartreuse1","chartreuse2","chartreuse3","chartreuse4"]
+flower_color=["BlueViolet","DarkMagenta","DarkOrchid","DarkOrchid1","DarkOrchid2","DarkOrchid3","DarkOrchid4","DarkViolet","DeepPink","DeepPink1","DeepPink2","DeepPink3","DeepPink4"]
+
+def grass(n):
+    for i in range(n):
+        for x in grass_color:
+            turtle.penup()
+            turtle.color(x)
+            turtle.setpos(random.randint(-500,500),random.randint(-400,-100))
+            turtle.pendown()
+            turtle.pensize(2)
+            turtle.setheading(random.randint(80,110))
+            turtle.forward(50)
+
+def tree(l,s,x):
+    if l>10:
+        turtle.pensize(s)
+        turtle.pencolor(x)
+        turtle.forward(l)
+        a=random.randint(10,45)
+        turtle.left(a)
+        tree(l*zarib[random.randint(0,3)],s-1,x)
+        turtle.right(a*2)
+        tree(l*zarib[random.randint(0,3)],s-1,x)
+        turtle.left(a)
+        turtle.backward(l)
+    else:
+        color=turtle.pencolor()
+        turtle.pencolor("green")
+        for _ in range(4):
+            turtle.forward(l)
+            turtle.right(90)
+        turtle.pencolor(color)
+
+
+def flower(n):
+    for i in range(n):
+        x=flower_color[random.randint(0,len(flower_color)-1)]
+        f=turtle.Turtle()
+        f.penup()
+        f.setpos(random.randint(-500,500),random.randint(-300,-100))
+        f.shape("circle")
+        f.color(x)
+        
+def star(n):
+    for _ in range(n):
+        s=turtle.Turtle()
+        s.penup()
+        s.shape("circle")
+        s.color("white")
+        s.shapesize(0.1)
+        s.setpos(random.randint(-500,500),random.randint(100,500))
+
+
+def screen():
+    turtle.tracer(0)
+    s=turtle.Turtle()
+    s.penup()
+    s.shape("square")
+    s.shapesize(20,50)
+    s.color("blue")
+    s.setpos(0,200)
+    s.pendown()
+    k=turtle.Turtle()
+    k.penup()
+    k.shape("square")
+    k.shapesize(20,50)
+    k.color("coral4")
+    k.setpos(0,-200)
+    k.pendown()
+    turtle.update()
+
+def sun():
+    s=turtle.Turtle()
+    s.penup()
+    s.color("white")
+    s.setpos(-300,500)
+    s.shape("circle")
+    s.shapesize(5)
+    s.pendown()
+
+
+
+turtle.tracer(0)
+turtle.bgcolor("blue")
+
+sun()
+star(70)
+grass(2500)
+flower(50)
+for i in range(7):
+    l=random.randint(100,300)
+    s=12
+    x=colors[random.randint(0,len(colors)-1)]
+    turtle.penup()
+    turtle.setheading(90)
+    turtle.setpos(random.randint(-500,500),random.randint(-400,-100))
+    turtle.pendown()
+    tree(l,s,x)
+
+turtle.update()
+turtle.mainloop()
+```
