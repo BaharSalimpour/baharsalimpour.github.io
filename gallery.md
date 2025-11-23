@@ -7,8 +7,8 @@ tags: [gallery]
 modified: 9-14-2019
 comments: false
 gallery:
-  - url: 
-    image_path: 
+  - url: https://reiseniran.de/wp-content/uploads/2019/08/%D8%AD%D8%B3%DB%8C%D9%86%DB%8C%D9%87-%D8%A7%D9%85%DB%8C%D9%86%DB%8C-%D9%82%D8%B2%D9%88%DB%8C%D9%86-861x1024.jpeg
+    image_path: https://reiseniran.de/wp-content/uploads/2019/08/%D8%AD%D8%B3%DB%8C%D9%86%DB%8C%D9%87-%D8%A7%D9%85%DB%8C%D9%86%DB%8C-%D9%82%D8%B2%D9%88%DB%8C%D9%86-861x1024.jpeg
     alt: "placeholder image 1"
     title: "Image 1 title caption"
   - url: 
